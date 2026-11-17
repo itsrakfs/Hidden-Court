@@ -1635,6 +1635,50 @@ dialog::backdrop{background:rgba(3,3,8,.84)}
  #pub .pph.pcv>.av{width:84px;height:84px;font-size:26px}
  #pub .pph.pcv h1{font-size:24px}
 }
+/* v68 player card */
+#pub .pph.pcv{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"av info" "av badges";column-gap:30px;row-gap:12px;padding:30px 32px 26px;align-items:center;background:linear-gradient(135deg,#0d0d1c 0%,#0a0a13 55%,#150a18 100%);border:1px solid rgba(255,43,214,.35);border-radius:4px;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,26px 100%,0 calc(100% - 26px));overflow:hidden;box-shadow:none}
+#pub .pph.pcv::before{display:block!important;content:'#' attr(data-r);position:absolute;inset-inline-end:22px;bottom:-34px;font:900 150px/1 Orbitron,sans-serif;color:transparent;-webkit-text-stroke:1px rgba(0,240,255,.28);pointer-events:none;letter-spacing:-4px}
+#pub .pph.pcv::after{content:'RANK #' attr(data-r);position:absolute;top:0;inset-inline-start:0;padding:5px 22px 5px 16px;background:#ff2bd6;color:#050509;font:800 11px/1.4 Orbitron,sans-serif;letter-spacing:.16em;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);box-shadow:0 0 18px rgba(255,43,214,.6)}
+#pub .pph.pcv>.av{grid-area:av;width:140px;height:140px;border-radius:0;clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);outline:2px solid #00f0ff;outline-offset:4px;box-shadow:0 0 28px rgba(0,240,255,.45);font-size:44px;margin-top:14px}
+#pub .pph.pcv>.av img{border-radius:0}
+#pub .pph.pcv>div:first-of-type{grid-area:info;margin-top:14px;min-width:0}
+#pub .pph.pcv h1{font-size:clamp(28px,4.6vw,46px);margin:0;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 0 22px rgba(255,43,214,.45)}
+#pub .pph.pcv>div:first-of-type small{display:inline-block;margin-top:10px;padding:3px 12px;border:1px solid rgba(0,240,255,.55);color:#00f0ff;font:700 11px Orbitron,'Chakra Petch',sans-serif;letter-spacing:.12em;background:rgba(0,240,255,.06)}
+#pub .pph.pcv>.pcv-s{display:none}
+#pub .pph.pcv>.pcv-b{grid-area:badges;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:14px;border-top:1px dashed rgba(255,43,214,.35);position:relative;z-index:1}
+#pub .pph.pcv>.pcv-b small{font:700 10px Orbitron,sans-serif;letter-spacing:.2em;color:#8a8aa8;text-transform:uppercase}
+/* stat tiles */
+#pub .kv.kv4,#pub .kv.kvx{gap:12px}
+#pub .kv.kv4>div,#pub .kv.kvx>div{position:relative;background:#0a0a13;border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:18px 14px 14px;overflow:hidden;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);text-align:center}
+#pub .kv>div::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:var(--tc,#ff2bd6);box-shadow:0 0 14px var(--tc,#ff2bd6)}
+#pub .kv>div:nth-child(4n+2){--tc:#00f0ff}
+#pub .kv>div:nth-child(4n+3){--tc:#39ff88}
+#pub .kv>div:nth-child(4n+4){--tc:#ffe14d}
+#pub .kv>div b.num{display:block;font:900 clamp(26px,3.4vw,36px)/1.1 Orbitron,sans-serif;color:#fff;text-shadow:0 0 16px var(--tc,#ff2bd6)}
+#pub .kv>div span{display:block;margin-top:6px;font:600 11px 'Chakra Petch',Cairo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8a8aa8}
+/* tabs */
+#pub .ptabs{background:none!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.12)!important;border-radius:0!important;padding:0!important;gap:4px;box-shadow:none!important}
+#pub .ptabs button{background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#8a8aa8;padding:12px 18px;font:700 13px 'Chakra Petch',Cairo,sans-serif;letter-spacing:.08em;position:relative}
+#pub .ptabs button[aria-pressed=true]{color:#fff!important;text-shadow:0 0 12px #ff2bd6}
+#pub .ptabs button[aria-pressed=true]::after{content:'';position:absolute;inset:auto 8px -1px 8px;height:3px;background:#ff2bd6;box-shadow:0 0 12px #ff2bd6}
+/* sections */
+#pub .ptp h2{display:flex;align-items:center;gap:10px;font:800 14px Orbitron,Cairo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+#pub .ptp h2::before{content:'';width:5px;height:20px;background:#00f0ff;box-shadow:0 0 12px #00f0ff}
+#pub .ptp .rdr,#pub .ptp .chw{background:#0a0a13;border:1px solid rgba(0,240,255,.25);border-radius:2px;padding:14px;background-image:var(--brk);}
+@media (max-width:640px){
+#pub .pph.pcv{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"av info" "badges badges";column-gap:16px;padding:34px 16px 18px}
+#pub .pph.pcv>.av{width:92px;height:92px;font-size:30px;margin-top:6px}
+#pub .pph.pcv::before{font-size:100px}
+#pub .ptabs button{padding:11px 11px;font-size:12px}
+}
+/* v69 big rank number */
+#pub .pph.pcv{padding-bottom:30px}
+#pub .pph.pcv::before{inset-inline-start:auto;inset-inline-end:34px;bottom:14px;font:900 96px/1 Orbitron,sans-serif;letter-spacing:-2px;color:#fff;-webkit-text-stroke:0;background:linear-gradient(180deg,#fff,#00f0ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 16px rgba(0,240,255,.55));opacity:1;z-index:1}
+#pub .pph.pcv>.pcv-b{padding-inline-end:190px;padding-inline-start:0}
+@media (max-width:640px){
+#pub .pph.pcv::before{font-size:56px;bottom:16px;inset-inline-end:16px}
+#pub .pph.pcv>.pcv-b{padding-inline-end:96px;min-height:64px}
+}
 </style>
 
 </head><body><div id="maint" hidden></div><div id="courtbg" aria-hidden="true"><svg viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="20" y="20" width="160" height="260" rx="4"/><path d="M20 150h160M100 80v140M20 80h160M20 220h160" /><path d="M20 150h160" stroke-width="3" stroke-dasharray="3 5"/></svg></div><div id="splash" aria-hidden="true"><svg class="sp-c" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" pathLength="1"><rect class="l1" x="40" y="80" width="320" height="540" rx="4" pathLength="1"/><path class="l2" d="M40 350H360" pathLength="1"/><path class="l3" d="M40 215H360M40 485H360" pathLength="1"/><path class="l4" d="M200 215V485" pathLength="1"/></g></svg><i class="sp-ball"></i><div class="sp-m"><svg  viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="sb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a0830"/><stop offset="1" stop-color="#06050c"/></linearGradient><linearGradient id="ss1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9f8"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient></defs><rect width="64" height="64" rx="17" fill="url(#sb1)"/><rect x=".75" y=".75" width="62.5" height="62.5" rx="16.4" fill="none" stroke="#ff2bd6" stroke-opacity=".55" stroke-width="1.5"/><g fill="none" stroke="#00f0ff" stroke-opacity=".5" stroke-width="1.1"><rect x="11" y="11" width="42" height="42" rx="3"/><path d="M11 32h6M47 32h6"/></g><path d="M22 18v28M42 18v28M22 32h20" fill="none" stroke="url(#ss1)" stroke-width="5.6" stroke-linecap="round"/><circle cx="49.5" cy="15" r="2.6" fill="#39ff88"/></svg></div><div class="sp-t"><b class="en">THE HIDDEN COURT</b><small class="en">PADEL RANKING</small></div><div class="sp-b"><i></i></div></div><script>try{if(!sessionStorage.getItem("hc_i")&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){document.getElementById("splash").classList.add("intro");sessionStorage.setItem("hc_i","1");}}catch(e){}</script><div id="root" dir="rtl" lang="ar">
@@ -2882,8 +2926,8 @@ function lgSchedule(L){
 
   async function drawEvent(ev){
     await loadFonts();
-    const rows = ev.rows.slice().sort((a,b) => b.d-a.d || a.name.localeCompare(b.name)), MAXR = 22, shown = rows.slice(0,MAXR), more = rows.length - shown.length;
-    const W = 1080, hasW = ev.win.length > 0, wH = hasW ? 330 : 0, mvH = ev.mvp ? 110 : 0, top = 330 + wH + mvH;
+    const rows = ev.rows.slice().sort((a,b) => b.d-a.d || a.name.localeCompare(b.name)), MAXR = 30, shown = rows.slice(0,MAXR), more = rows.length - shown.length;
+    const W = 1080, hasW = false, wH = 0, mvH = 0, top = 330;
     const H = top + 70 + shown.length*84 + (more > 0 ? 70 : 0) + 160, cv = document.createElement('canvas'); cv.width = W; cv.height = H; const g = cv.getContext('2d');
     courtBg(g, W, H, 420, H-300); brandHead(g);
     g.textBaseline = 'middle'; g.direction = 'rtl'; g.textAlign = 'right'; g.fillStyle = '#f1ecfa'; g.font = '700 84px '+FD; g.fillText(String(ev.label).replace(/#/g,'\u200E#'), 1020, 205, 940);
@@ -2903,11 +2947,11 @@ function lgSchedule(L){
       }
       y += wH;
     }
-    if(ev.mvp){ const q = evNm(ev, ev.mvp), txt = 'MVP  '+q.name; g.direction = 'ltr'; g.font = '600 34px '+FB; const w = Math.min(900, g.measureText(txt).width+80); rr(g,(W-w)/2,y,w,76,38); g.fillStyle = 'rgba(56,189,248,.12)'; g.fill(); g.lineWidth = 2; g.strokeStyle = '#38bdf8'; g.stroke(); g.fillStyle = '#38bdf8'; g.textAlign = 'center'; g.fillText(txt, W/2, y+40, w-50); y += mvH; }
+    if(false){ const q = evNm(ev, ev.mvp), txt = 'MVP  '+q.name; g.direction = 'ltr'; g.font = '600 34px '+FB; const w = Math.min(900, g.measureText(txt).width+80); rr(g,(W-w)/2,y,w,76,38); g.fillStyle = 'rgba(56,189,248,.12)'; g.fill(); g.lineWidth = 2; g.strokeStyle = '#38bdf8'; g.stroke(); g.fillStyle = '#38bdf8'; g.textAlign = 'center'; g.fillText(txt, W/2, y+40, w-50); y += mvH; }
     g.direction = 'rtl'; g.textAlign = 'right'; g.fillStyle = '#b9a2ff'; g.font = '600 26px '+FB; g.fillText('نقاط اللاعبين في الدورة', 1020, y+30);
     y += 70;
     shown.forEach((r,i) => { const ry = y + i*84, cy = ry+39; rr(g,60,ry,960,74,22); g.fillStyle = '#150e25'; g.fill(); g.lineWidth = 2; g.strokeStyle = '#2d2248'; rr(g,60,ry,960,74,22); g.stroke();
-      g.direction = 'ltr'; g.textAlign = 'left'; g.font = '600 32px '+FB; g.fillStyle = ev.mvp === r.pid ? '#38bdf8' : '#f1ecfa'; g.fillText(evRN(r), 100, cy, 620);
+      g.direction = 'ltr'; g.textAlign = 'left'; g.font = '600 32px '+FB; g.fillStyle = ev.mvp === r.pid ? '#38bdf8' : '#f1ecfa'; g.fillText(evRN(r)+(ev.mvp === r.pid ? '  ★ MVP' : ''), 100, cy, 620);
       g.textAlign = 'right'; g.font = '700 42px '+FD; g.fillStyle = r.d > 0 ? '#5fd68a' : r.d < 0 ? '#ff7a88' : '#a094bd'; g.fillText(r.d ? sgn(r.d) : '—', 984, cy+2); });
     y += shown.length*84;
     if(more > 0){ g.direction = 'rtl'; g.textAlign = 'center'; g.fillStyle = '#a094bd'; g.font = '500 28px '+FB; g.fillText('و '+more+' لاعبين كمان', W/2, y+30); }
@@ -3213,7 +3257,7 @@ async function drawPlayerClassic(p){
     await loadFonts();
     const T = lgTable(L), ev = evList().find(e => e.lg === L.id), ms = L.matches.filter(lgPlayed), W = 1080, hasMvp = !!(ev && ev.mvp);
     const nm = t => tName(t).replace(/ و /g, ' & ');
-    const H = 330 + 60 + 3*124 + (hasMvp ? 110 : 20) + 70 + 56 + T.length*84 + 50 + (ms.length ? 70 + ms.length*76 : 0) + 150;
+    const H = 330 + 56 + 40 + T.length*84 + 50 + (ms.length ? 70 + ms.length*76 : 0) + 150;
     const cv = document.createElement('canvas'); cv.width = W; cv.height = H; const g = cv.getContext('2d');
     const fit = (txt, maxW, size, wt, fam) => { let fs = size; g.font = wt+' '+fs+'px '+fam; while(fs > 18 && g.measureText(txt).width > maxW){ fs -= 2; g.font = wt+' '+fs+'px '+fam; } return fs; };
     const allN = L.teams.map(t => nm(t)), fitMin = (maxW, size, wt) => Math.min.apply(null, allN.map(n => fit(n, maxW, size, wt, FB))), sT = fitMin(400, 30, '600'), sM = fitMin(380, 26, '700');
@@ -3221,15 +3265,6 @@ async function drawPlayerClassic(p){
     g.textBaseline = 'middle'; g.direction = 'rtl'; g.textAlign = 'right'; g.fillStyle = '#f1ecfa'; g.font = '700 84px '+FD; g.fillText(L.name.replace(/#/g,'\u200E#'), 1020, 205, 940);
     g.fillStyle = '#a094bd'; g.font = '500 28px '+FB; g.fillText(evDate(L.date)+' · '+ms.length+' ماتش · '+L.teams.length+' فرق', 1020, 276);
     let y = 330;
-    g.direction = 'rtl'; g.textAlign = 'right'; g.fillStyle = '#b9a2ff'; g.font = '600 26px '+FB; g.fillText('المراكز الأولى', 1020, y+20); y += 60;
-    T.slice(0,3).forEach((r,k) => { const md = MED[k+1], ry = y + k*124;
-      rr(g,60,ry,960,110,28); const tg = g.createLinearGradient(60,0,1020,0); tg.addColorStop(0,'rgba(21,14,37,1)'); tg.addColorStop(1,'rgba('+md[3]+','+(k===0?.22:.12)+')'); g.fillStyle = tg; g.fill(); g.lineWidth = 2.5; g.strokeStyle = 'rgba('+md[3]+',.75)'; rr(g,60,ry,960,110,28); g.stroke();
-      g.beginPath(); g.arc(960,ry+55,36,0,7); const bg2 = g.createLinearGradient(924,0,996,0); bg2.addColorStop(0,md[1]); bg2.addColorStop(1,md[2]); g.fillStyle = bg2; g.fill();
-      g.direction = 'ltr'; g.textAlign = 'center'; g.fillStyle = '#0b0714'; g.font = '700 40px '+FD; g.fillText(String(k+1), 960, ry+58);
-      g.textAlign = 'right'; fit(nm(r.t), 600, 38, '700', FB); g.fillStyle = '#f1ecfa'; g.fillText(nm(r.t), 900, ry+55);
-      g.direction = 'rtl'; g.textAlign = 'left'; g.font = '500 28px '+FB; g.fillStyle = '#a094bd'; g.fillText(r.w+' فوز · '+r.l+' خسارة', 100, ry+55); });
-    y += 3*124 + 10;
-    if(hasMvp){ const q = evNm(ev, ev.mvp), txt = 'MVP  '+q.name; g.direction = 'ltr'; g.font = '600 34px '+FB; const w = Math.min(900, g.measureText(txt).width+80); rr(g,(W-w)/2,y,w,76,38); g.fillStyle = 'rgba(56,189,248,.12)'; g.fill(); g.lineWidth = 2; g.strokeStyle = '#38bdf8'; g.stroke(); g.fillStyle = '#38bdf8'; g.textAlign = 'center'; g.fillText(txt, W/2, y+40, w-50); y += 110; } else y += 10;
     g.direction = 'rtl'; g.textAlign = 'right'; g.fillStyle = '#b9a2ff'; g.font = '600 26px '+FB; g.fillText('الترتيب الكامل', 1020, y+20); y += 56;
     g.font = '500 22px '+FB; g.fillStyle = '#7d7298'; g.textAlign = 'center'; [['لعب',470],['فاز',360],['خسر',250],['الفرق',140]].forEach(c => g.fillText(c[0], c[1], y-16));
     T.forEach((r,k) => { const ry = y + k*84, cy = ry+38, md = MED[k+1]; rr(g,60,ry,960,74,22); g.fillStyle = k < 3 ? '#1a1230' : '#150e25'; g.fill(); g.lineWidth = 2; g.strokeStyle = md ? 'rgba('+md[3]+',.55)' : '#2d2248'; rr(g,60,ry,960,74,22); g.stroke();
