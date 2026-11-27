@@ -1886,6 +1886,8 @@ html[dir=ltr] #pub .evq,html[dir=ltr] #evq{min-width:0}
 @media (min-width:760px){html[dir=ltr] .hero .emb{inset-inline-start:auto;inset-inline-end:0;top:46px}}
 html[dir=ltr] .evchip small{font-size:8.5px;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;display:block}
 html[dir=ltr] .evq{min-width:0}
+.pc .acts4 .rsb{grid-column:1/-1;justify-content:center;gap:6px}
+.pc .acts4 .rsb svg{width:14px;height:14px}
 </style>
 
 </head><body><div id="maint" hidden></div><div id="courtbg" aria-hidden="true"><svg viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="20" y="20" width="160" height="260" rx="4"/><path d="M20 150h160M100 80v140M20 80h160M20 220h160" /><path d="M20 150h160" stroke-width="3" stroke-dasharray="3 5"/></svg></div><div id="splash" aria-hidden="true"><svg class="sp-c" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" pathLength="1"><rect class="l1" x="40" y="80" width="320" height="540" rx="4" pathLength="1"/><path class="l2" d="M40 350H360" pathLength="1"/><path class="l3" d="M40 215H360M40 485H360" pathLength="1"/><path class="l4" d="M200 215V485" pathLength="1"/></g></svg><i class="sp-ball"></i><div class="sp-m"><svg  viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="sb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a0830"/><stop offset="1" stop-color="#06050c"/></linearGradient><linearGradient id="ss1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9f8"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient></defs><rect width="64" height="64" rx="17" fill="url(#sb1)"/><rect x=".75" y=".75" width="62.5" height="62.5" rx="16.4" fill="none" stroke="#ff2bd6" stroke-opacity=".55" stroke-width="1.5"/><g fill="none" stroke="#00f0ff" stroke-opacity=".5" stroke-width="1.1"><rect x="11" y="11" width="42" height="42" rx="3"/><path d="M11 32h6M47 32h6"/></g><path d="M22 18v28M42 18v28M22 32h20" fill="none" stroke="url(#ss1)" stroke-width="5.6" stroke-linecap="round"/><circle cx="49.5" cy="15" r="2.6" fill="#39ff88"/></svg></div><div class="sp-t"><b class="en">THE HIDDEN COURT</b><small class="en">PADEL RANKING</small></div><div class="sp-b"><i></i></div></div><script>try{if(!sessionStorage.getItem("hc_i")&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){document.getElementById("splash").classList.add("intro");sessionStorage.setItem("hc_i","1");}}catch(e){}</script><div id="root" dir="rtl" lang="ar">
@@ -2132,7 +2134,7 @@ html[dir=ltr] .evq{min-width:0}
   const RESET = ':root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif;background:#fafafa}img{max-width:100%}[hidden]{display:none!important}';
   const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Chakra+Petch:wght@400;500;600;700&family=Changa:wght@500;700&family=Cairo:wght@400;600;700&display=swap">';
   const NUM = ['points','streak','streak_peak','tournaments','mvp_count','mw','ml'];
-  const TYPES = {tournament:'دورة', adjust:'تعديل نقاط', edit:'تعديل', add:'إضافة', delete:'حذف', undo:'استرجاع', rules:'قواعد', import:'استيراد'};
+  const TYPES = {tournament:'دورة', adjust:'تعديل نقاط', edit:'تعديل', add:'إضافة', delete:'حذف', undo:'استرجاع', restore:'استعادة ستريك', rules:'قواعد', import:'استيراد'};
   const ORD = ['الأول','الثاني','الثالث','الرابع','الخامس','السادس','السابع','الثامن'];
   const ICONS = {
     users:'<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M18 20c0-2.5-1.2-4.3-3-5.3"/>',
@@ -3008,6 +3010,31 @@ function lgSchedule(L){
           if(f.is_mvp.checked){ S.players.forEach(q => { if(q !== t) setMvp(act, q, 0); }); setMvp(act, t, 1); } else setMvp(act, t, 0);
           pushLog(act);
         }, old ? 'تم تعديل اللاعب' : 'تمت إضافة اللاعب');
+      };
+    });
+  }
+  function lostStreak(p){
+    for(const e of S.log){
+      if(e.reverted_by || e.type === 'undo') continue;
+      const c = e.ch.find(x => x.pid === p.id); if(!c) continue;
+      if(e.type === 'restore') return null;
+      if(c.d && c.d.streak < 0) return {n:-c.d.streak, label:e.label, t:e.t};
+    }
+    return null;
+  }
+  function restoreForm(id){
+    const p = byId(id); if(!p) return;
+    const L = lostStreak(p), cur = p.streak || 0, def = L ? L.n : 0;
+    show('<form class="form" id="rf"><div class="ch">'+avatar(p)+'<div><h3 class="en">'+esc(p.name)+'</h3><small>الستريك الحالي <b class="num">'+cur+'</b></small></div>'+closeBtn+'</div>'+
+      '<p class="hint">'+(L ? 'آخر ستريك اتصفّر: <b class="num">'+L.n+'</b>'+(L.label ? ' ('+esc(L.label)+')' : '')+'.' : 'مفيش ستريك متصفّر في السجل الأخير. اكتب الرقم بنفسك.')+' الاستعادة بتضيف الرقم للستريك الحالي، ومفيش نقاط بونص بتتضاف بأثر رجعي.</p>'+
+      '<label class="lbl">الستريك اللي هيترجّع<input id="rf-n" type="number" min="1" step="1" value="'+(def || '')+'" required></label>'+
+      '<label class="lbl">العذر (لازم)<input id="rf-r" placeholder="مثال: سفر / ظرف طارئ" required></label>'+
+      '<p class="hint" id="rf-sum"></p><div class="msg" id="rf-msg"></div><div class="foot"><button class="btn" type="button" data-close>إلغاء</button><button class="btn pri" type="submit">استعادة</button></div></form>', () => {
+      const sum = () => { const n = parseInt($('rf-n').value,10)||0; $('rf-sum').innerHTML = 'الستريك بعد الاستعادة: <b class="num">'+(cur+n)+'</b>'; }; sum(); $('rf-n').addEventListener('input', sum);
+      $('rf').onsubmit = async e => { e.preventDefault();
+        const n = parseInt($('rf-n').value,10); if(!n || n < 1){ $('rf-msg').textContent = 'اكتب رقم أكبر من صفر'; return; }
+        const r = $('rf-r').value.trim(); if(!r){ $('rf-msg').textContent = 'اكتب العذر عشان يتسجل'; return; }
+        hide(); await commit(() => { const act = newAct('restore', 'استعادة ستريك '+p.name+' (+'+n+')', r); bump(act, p, 'streak', n); bump(act, p, 'streak_peak', Math.max(0, p.streak - (p.streak_peak||0))); pushLog(act); }, 'تم استعادة الستريك');
       };
     });
   }
@@ -4086,7 +4113,7 @@ async function drawPlayerClassic(p){
   function pcard(p){
     const meta = (p.team ? esc(p.team)+' · ' : '')+cx(CUP,p.tournaments)+' · '+cx(FLAME,p.streak);
     return '<div class="pc'+medalOf(p)+'"><span class="rk num">'+p.rank+'</span><div class="who">'+avatar(p,'sm')+'<div class="pn"><b class="en'+(p.is_mvp?' mvp':'')+'">'+esc(p.name)+'</b><small>'+meta+'</small></div></div><div class="pp"><b class="num">'+p.points+'</b><small>نقطة</small></div>'+
-      '<div class="acts4"><button class="btn sm pri" type="button" data-act="adj" data-pid="'+p.id+'">'+ico('pm')+'نقاط</button><button class="btn sm" type="button" data-act="edit" data-pid="'+p.id+'">'+ico('edit')+'تعديل</button><button class="btn sm" type="button" data-act="card" data-pid="'+p.id+'">'+ico('history')+'السجل</button><button class="btn sm dng" type="button" data-act="del" data-pid="'+p.id+'" aria-label="حذف">'+ico('trash')+'</button></div></div>';
+      '<div class="acts4"><button class="btn sm pri" type="button" data-act="adj" data-pid="'+p.id+'">'+ico('pm')+'نقاط</button><button class="btn sm" type="button" data-act="edit" data-pid="'+p.id+'">'+ico('edit')+'تعديل</button><button class="btn sm" type="button" data-act="card" data-pid="'+p.id+'">'+ico('history')+'السجل</button><button class="btn sm dng" type="button" data-act="del" data-pid="'+p.id+'" aria-label="حذف">'+ico('trash')+'</button>'+(!p.streak && lostStreak(p) ? '<button class="btn sm rsb" type="button" data-act="rs" data-pid="'+p.id+'">'+FLAME+'استعادة آخر ستريك ('+lostStreak(p).n+')</button>' : '')+'</div></div>';
   }
   /* ---------- duplicate-name detection ---------- */
   const nameKey = n => String(n || '').toLowerCase().replace(/[ً-ٟـ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/[^a-z0-9؀-ۿ ]+/g, ' ').replace(/\s+/g, ' ').trim();
@@ -4969,7 +4996,7 @@ async function drawPlayerClassic(p){
       await commit(() => { S.cfg = Object.assign({}, S.cfg, {maint:{on:on, msg:msg, until:un}}); }, kind === 'toggle' ? (on ? 'اتشغّل وضع الصيانة' : 'اتقفل وضع الصيانة') : 'تم حفظ رسالة الصيانة'); return; }
     const th = e.target.closest('[data-theme]'); if(th){ const k = th.getAttribute('data-theme'); if(k !== ((S.cfg && S.cfg.theme) || 'violet')) await commit(() => { S.cfg.theme = k; }, 'تم تغيير الثيم'); return; }
     const a = e.target.closest('[data-act]'); if(!a) return; const act = a.getAttribute('data-act'), pid = a.getAttribute('data-pid');
-    if(act === 'add') playerForm(null); else if(act === 'edit') playerForm(pid); else if(act === 'adj') adjForm(pid); else if(act === 'del') delForm(pid); else if(act === 'tt') ttForm();
+    if(act === 'add') playerForm(null); else if(act === 'edit') playerForm(pid); else if(act === 'adj') adjForm(pid); else if(act === 'rs') restoreForm(pid); else if(act === 'del') delForm(pid); else if(act === 'tt') ttForm();
     else if(act === 'card'){ ranked(); openCard(pid, true); }
     else if(act === 'backup') backup();
     else if(act === 'undo'){ const id = a.getAttribute('data-aid'), le = S.log.find(x => x.id === id), run = () => commit(() => { undoEntry(id); }, 'تم الاسترجاع وتسجيله في سجل اللاعبين');
