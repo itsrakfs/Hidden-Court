@@ -1888,6 +1888,31 @@ html[dir=ltr] .evchip small{font-size:8.5px;letter-spacing:0;white-space:nowrap;
 html[dir=ltr] .evq{min-width:0}
 .pc .acts4 .rsb{grid-column:1/-1;justify-content:center;gap:6px}
 .pc .acts4 .rsb svg{width:14px;height:14px}
+.tier{display:inline-flex;align-items:center;gap:5px}
+.tier .tic{width:13px;height:13px;flex:none}
+.pcv-s .tier .tic,#pub .pph.pcv .pcv-tg .tier .tic,.vsx-side .tier .tic{width:16px;height:16px}
+.tbar{display:flex;align-items:center;gap:14px;margin:14px 0;padding:14px 16px;border:1px solid color-mix(in srgb,var(--tc) 38%,var(--line));border-radius:14px;background:linear-gradient(100deg,rgba(var(--rgb),.12),transparent 65%),var(--surface)}
+.tbadge{flex:none;width:66px;height:66px}
+.tbi{width:100%;height:100%;display:block;filter:drop-shadow(0 0 8px rgba(var(--rgb),.45))}
+.tbm{flex:1;min-width:0}
+.tbt{display:flex;align-items:baseline;justify-content:space-between;gap:4px 10px;flex-wrap:wrap}
+.tbt b{font:800 17px Orbitron,'Chakra Petch',sans-serif;color:var(--tc);letter-spacing:.06em;text-transform:uppercase}
+.tbt small{color:var(--muted);font-size:12.5px}
+.tbk{direction:ltr;height:9px;border-radius:99px;background:rgba(255,255,255,.08);margin:10px 0 5px;overflow:hidden}
+.tbk i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--tc),var(--tl));box-shadow:0 0 12px rgba(var(--rgb),.6);transform-origin:0 50%;animation:barin .9s .1s both cubic-bezier(.2,.7,.2,1)}
+.tbe{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.tlad{display:grid;gap:8px;margin:12px 0}
+.trw{display:flex;align-items:center;gap:12px;padding:8px 12px;border:1px solid color-mix(in srgb,var(--tc) 30%,var(--line));border-radius:12px;background:linear-gradient(100deg,color-mix(in srgb,var(--tc) 9%,transparent),transparent 70%)}
+.trb{flex:none;width:42px;height:42px}
+.trb .tbi{filter:none}
+.trw>b{font:800 13.5px Orbitron,'Chakra Petch',sans-serif;color:var(--tc);letter-spacing:.06em;text-transform:uppercase;min-width:92px}
+.trs{display:flex;gap:6px;flex-wrap:wrap;margin-inline-start:auto}
+.trs i{font-style:normal;display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:8px;background:rgba(255,255,255,.05);font-size:11.5px}
+.trs u{text-decoration:none;color:var(--tl);font-weight:800}
+.trs em{font-style:normal;color:var(--muted)}
+@media (max-width:480px){.trw{flex-wrap:wrap}.trs{margin-inline-start:0;width:100%}.tbadge{width:56px;height:56px}}
+html.lite .tbk i{animation:none}
+@media (prefers-reduced-motion:reduce){.tbk i{animation:none!important}}
 </style>
 
 </head><body><div id="maint" hidden></div><div id="courtbg" aria-hidden="true"><svg viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="20" y="20" width="160" height="260" rx="4"/><path d="M20 150h160M100 80v140M20 80h160M20 220h160" /><path d="M20 150h160" stroke-width="3" stroke-dasharray="3 5"/></svg></div><div id="splash" aria-hidden="true"><svg class="sp-c" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" pathLength="1"><rect class="l1" x="40" y="80" width="320" height="540" rx="4" pathLength="1"/><path class="l2" d="M40 350H360" pathLength="1"/><path class="l3" d="M40 215H360M40 485H360" pathLength="1"/><path class="l4" d="M200 215V485" pathLength="1"/></g></svg><i class="sp-ball"></i><div class="sp-m"><svg  viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="sb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a0830"/><stop offset="1" stop-color="#06050c"/></linearGradient><linearGradient id="ss1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9f8"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient></defs><rect width="64" height="64" rx="17" fill="url(#sb1)"/><rect x=".75" y=".75" width="62.5" height="62.5" rx="16.4" fill="none" stroke="#ff2bd6" stroke-opacity=".55" stroke-width="1.5"/><g fill="none" stroke="#00f0ff" stroke-opacity=".5" stroke-width="1.1"><rect x="11" y="11" width="42" height="42" rx="3"/><path d="M11 32h6M47 32h6"/></g><path d="M22 18v28M42 18v28M22 32h20" fill="none" stroke="url(#ss1)" stroke-width="5.6" stroke-linecap="round"/><circle cx="49.5" cy="15" r="2.6" fill="#39ff88"/></svg></div><div class="sp-t"><b class="en">THE HIDDEN COURT</b><small class="en">PADEL RANKING</small></div><div class="sp-b"><i></i></div></div><script>try{if(!sessionStorage.getItem("hc_i")&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){document.getElementById("splash").classList.add("intro");sessionStorage.setItem("hc_i","1");}}catch(e){}</script><div id="root" dir="rtl" lang="ar">
@@ -2163,9 +2188,33 @@ html[dir=ltr] .evq{min-width:0}
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const initials = n => { const p = n.trim().split(/\s+/); return ((p[0]||'?')[0] + (p[1]?p[1][0]:'')).toUpperCase(); };
   const TIERS = [['leg','Legendary'],['eme','Emerald'],['dia','Diamond'],['gld','Gold'],['slv','Silver'],['brz','Bronze']];
-  const tierOf = p => { const L = ranked(), N = Math.max(1, L.length), i = L.findIndex(x => x.id === p.id), r = i < 0 ? N : i + 1; const K = Math.max(1, L.filter(x => x.rank === 1).length), t = r <= K ? 0 : 1 + Math.min(4, Math.floor((r - K - 1) * 5 / Math.max(1, N - K))); return {k:TIERS[t][0], n:TIERS[t][1]}; };
+  const TIER_DEF = []; [['brz','Bronze',[0,5,10,15]],['slv','Silver',[15,20,25,30]],['gld','Gold',[30,35,40,45]],['dia','Diamond',[45,50,55,60]],['eme','Emerald',[60,70,80,100]]].forEach(d => { for(let i = 0; i < 3; i++) TIER_DEF.push({k:d[0], nm:d[1], lv:i+1, lo:d[2][i], hi:d[2][i+1]}); }); TIER_DEF.push({k:'leg', nm:'Legendary', lv:0, lo:100, hi:Infinity});
+  const tierName = d => d.nm + (d.lv ? ' '+d.lv : '');
+  const tierOf = p => { const pts = Math.max(0, p.points || 0); let i = TIER_DEF.length - 1; for(let j = 0; j < TIER_DEF.length; j++) if(pts < TIER_DEF[j].hi){ i = j; break; } const d = TIER_DEF[i], nx = TIER_DEF[i+1] || null; return {k:d.k, n:tierName(d), lv:d.lv, lo:d.lo, hi:d.hi, pct:nx ? Math.round((pts - d.lo) * 100 / (d.hi - d.lo)) : 100, next:nx ? tierName(nx) : '', need:nx ? d.hi - pts : 0}; };
+  const tierGlyph = (k, c, b) => ({
+    brz:'<circle cx="24" cy="24" r="11.5" fill="'+c+'"/><path d="M14.4 19.3c4.7 4.4 14.5 4.4 19.2 0M14.4 28.7c4.7-4.4 14.5-4.4 19.2 0" fill="none" stroke="'+b+'" stroke-width="2.2" stroke-linecap="round"/>',
+    slv:'<ellipse cx="24" cy="20.5" rx="9.6" ry="11" fill="none" stroke="'+c+'" stroke-width="2.7"/><g fill="'+c+'"><circle cx="20.4" cy="15.6" r="1.4"/><circle cx="27.6" cy="15.6" r="1.4"/><circle cx="24" cy="20" r="1.4"/><circle cx="19.6" cy="24.4" r="1.4"/><circle cx="28.4" cy="24.4" r="1.4"/></g><path d="M24 31.5V39" stroke="'+c+'" stroke-width="4.2" stroke-linecap="round"/>',
+    gld:'<path d="M16 13h16v8a8 8 0 0 1-16 0z" fill="'+c+'"/><path d="M16 15h-4.5v3a5 5 0 0 0 5 5M32 15h4.5v3a5 5 0 0 1-5 5" fill="none" stroke="'+c+'" stroke-width="2.2"/><rect x="22" y="29" width="4" height="5.5" fill="'+c+'"/><rect x="16.5" y="34" width="15" height="3.8" rx="1.6" fill="'+c+'"/><circle cx="24" cy="20" r="2.4" fill="'+b+'" fill-opacity=".55"/>',
+    dia:'<path d="M16 14h16l6.5 8L24 38.5 9.5 22z" fill="'+c+'"/><path d="M9.5 22h29M16 14l8 8 8-8M24 22v16.5M17.8 22L24 38.5 30.2 22" fill="none" stroke="'+b+'" stroke-opacity=".55" stroke-width="1.5" stroke-linejoin="round"/>',
+    eme:'<path d="M24 9.5l11.5 6.6v15.8L24 38.5 12.5 31.9V16.1z" fill="'+c+'"/><path d="M19.6 17.8v12.4M28.4 17.8v12.4M19.6 24h8.8" fill="none" stroke="'+b+'" stroke-width="3.2" stroke-linecap="round"/>',
+    leg:'<path d="M9.5 34V16l8.4 7.2L24 12.5l6.1 10.7 8.4-7.2v18z" fill="'+c+'"/><rect x="9.5" y="36" width="29" height="3.2" rx="1.6" fill="'+c+'"/><circle cx="24" cy="27.2" r="3.3" fill="'+b+'" fill-opacity=".6"/><circle cx="9.5" cy="15.2" r="1.9" fill="'+c+'"/><circle cx="24" cy="11.5" r="1.9" fill="'+c+'"/><circle cx="38.5" cy="15.2" r="1.9" fill="'+c+'"/>'
+  })[k];
+  const tierIcon = (k, mode, lv) => {
+    const C = TCOL[k][0], L = TCOL[k][1];
+    if(mode === 'chip') return '<svg class="tic" viewBox="8 8 32 32" aria-hidden="true">'+tierGlyph(k, 'currentColor', 'rgba(10,8,20,.6)')+'</svg>';
+    const pips = lv ? [1,2,3].map(n => '<rect x="'+(13.75+(n-1)*7.5)+'" y="38.4" width="5.5" height="2.5" rx="1.25" fill="'+(n <= lv ? L : C)+'" fill-opacity="'+(n <= lv ? 1 : .3)+'"/>').join('') : '';
+    return '<svg class="tbi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="3" width="42" height="42" rx="12" fill="#0d0a18" stroke="'+C+'" stroke-opacity=".7" stroke-width="2"/><path d="M3 24h5M40 24h5" stroke="'+C+'" stroke-opacity=".45" stroke-width="1.4"/><g transform="translate(24 '+(lv ? 21.4 : 24)+') scale('+(lv ? .8 : .86)+') translate(-24 -24)">'+tierGlyph(k, C, '#0a0814')+'</g>'+pips+'<circle cx="38" cy="10" r="3.1" fill="#3dff88"/></svg>';
+  };
+  const tIcImg = {};
+  const loadTierIcons = () => Promise.all(Object.keys(TCOL).map(k => new Promise(r => { if(tIcImg[k]) return r(); const im = new Image(); im.onload = () => { tIcImg[k] = im; r(); }; im.onerror = () => r(); im.src = 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(tierIcon(k, 'badge', 0).replace('<svg ', '<svg width="192" height="192" ')); })));
   const TCOL = {leg:['#ff3df0','#ffc2fb','255,61,240'], eme:['#10e08a','#b6ffdc','16,224,138'], dia:['#5ee7ff','#d3f8ff','94,231,255'], gld:['#f2c14e','#ffe9a6','242,193,78'], slv:['#aab4c3','#e3e8ef','170,180,195'], brz:['#d08a4e','#f0c39c','208,138,78']};
-  const tierChip = p => { const t = tierOf(p); return '<span class="tier en t-'+t.k+'" style="--tc:'+TCOL[t.k][0]+'">'+t.n+'</span>'; };
+  const tierTag = (p, ex) => { const t = tierOf(p); return '<span class="tier en t-'+t.k+(ex ? ' '+ex : '')+'" style="--tc:'+TCOL[t.k][0]+'" title="'+t.n+'">'+tierIcon(t.k, 'chip')+t.n+'</span>'; };
+  const tierChip = p => tierTag(p);
+  function tierBar(p){ const t = tierOf(p), c = TCOL[t.k];
+    return '<div class="tbar" style="--tc:'+c[0]+';--tl:'+c[1]+';--rgb:'+c[2]+'"><span class="tbadge">'+tierIcon(t.k, 'badge', t.lv)+'</span><div class="tbm"><div class="tbt"><b class="en">'+t.n+'</b><small>'+(t.next ? 'باقي '+t.need+' نقطة لـ '+t.next : 'أعلى مستوى في الدوري')+'</small></div><div class="tbk" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+t.pct+'"><i style="width:'+t.pct+'%"></i></div><div class="tbe num"><span>'+t.lo+'</span><span>'+(t.next ? t.hi : '∞')+'</span></div></div></div>'; }
+  function tierLadder(){
+    return '<div class="tlad">'+[['leg','Legendary',[100]],['eme','Emerald',[60,70,80,100]],['dia','Diamond',[45,50,55,60]],['gld','Gold',[30,35,40,45]],['slv','Silver',[15,20,25,30]],['brz','Bronze',[0,5,10,15]]].map(d => {
+      const c = TCOL[d[0]]; return '<div class="trw" style="--tc:'+c[0]+';--tl:'+c[1]+'"><span class="trb">'+tierIcon(d[0], 'badge', 0)+'</span><b class="en">'+d[1]+'</b>'+(d[0] === 'leg' ? '<span class="trs"><i><em class="num">100+</em></i></span>' : '<span class="trs">'+[0,1,2].map(i => '<i><u class="num">'+(i+1)+'</u><em class="num">'+d[2][i]+'–'+d[2][i+1]+'</em></i>').join('')+'</span>')+'</div>'; }).join('')+'</div>'; }
   const stkBonus = (st, c) => { c = c || S.cfg; const e = c.streakEvery || 4; if(!st || st % e !== 0) return 0; return st >= (c.streakFrom || 12) ? (c.streakBonus2 == null ? c.streakBonus : c.streakBonus2) : c.streakBonus; };
   const stkLadder = c => { const e = c.streakEvery || 4, out = []; for(let i = 1; i <= 4; i++) out.push([e*i, stkBonus(e*i, c)]); return out; };
   const stkTxt = c => 'كل '+c.streakEvery+' ستريك بيدّوك '+c.streakBonus+' نقطة بونص، ومن ستريك '+c.streakFrom+' وفوق البونص بيبقى '+c.streakBonus2+' نقطة.';
@@ -2213,6 +2262,8 @@ html[dir=ltr] .evq{min-width:0}
   Object.assign(EN_D, {"أفضل {} لاعبين": "Top {} players", "أفضل {} لاعبين · الشهر {}": "Top {} players · Month {}", "التصنيف الكامل": "Full ranking", "{} ماتش · {} فرق": "{} matches · {} teams", "نقطة · المركز {}": "pts · Rank {}", "الشهر {}: {} نقطة": "Month {}: {} pts", "الشهر {}: {} نقطة · المركز {} في الشهر": "Month {}: {} pts · Rank {} in month", "بطل الشهر {}": "Month {} champion", "لو فريق كسب كل ماتشات الجلسة {}-{}، نقطه بتتضاعف": "If a team wins all session matches {}-{}, its points are doubled"}); /* en-add2 */
   function swTxt(t){ t = String(t || ''); if(LANG !== 'en') return t; const r = tr(t); return /[\u0600-\u06FF]/.test(r) ? 'If a team wins every match in the session, its points are doubled' : r; }
   function cnTxt(c){ const t = String(c.cancel || ''); if(LANG !== 'en') return t; const r = tr(t); return /[\u0600-\u06FF]/.test(r) ? 'Withdrawing a day or less before the tournament deducts '+(c.penalty|0)+' point'+((c.penalty|0) === 1 ? '' : 's') : r; }
+  Object.assign(EN_D, {"باقي {} نقطة لـ {}": "{} pts to {}", "باقي {} نقطة لـ {} {}": "{} pts to {} {}", "أعلى مستوى في الدوري": "Top tier in the league", "التصنيفات": "Tiers", "تصنيفك بيتحدد بنقاطك، وكل تصنيف ليه 3 مستويات.": "Your tier is set by your points, and each tier has 3 levels.", "ليجيندري بيتفتح من {} نقطة وهو مستوى واحد.": "Legendary unlocks at {} points and has a single level."}); /* en-add3 */
+  Object.assign(EN_D, {"نقاط الشهر · الترتيب": "Month pts · Rank"}); /* en-add4 */
   function setLang(l){ LANG = l === 'en' ? 'en' : 'ar'; try{ localStorage.setItem('hc_lang', LANG); }catch(e){} trc.clear(); i18nApply(); renderAll(); trNode(document.body); }
   (function(){ const p = CanvasRenderingContext2D.prototype, f = p.fillText, st = p.strokeText, mt = p.measureText;
     p.fillText = function(t){ if(LANG === 'en'){ arguments[0] = tr(String(t)); this.direction = 'ltr'; } return f.apply(this, arguments); };
@@ -2341,7 +2392,7 @@ html[dir=ltr] .evq{min-width:0}
   /* ---------- public: ranking ---------- */
   function rowHtml(p, mx, i){
     return '<tr data-id="'+p.id+'" tabindex="0" class="'+medalOf(p).trim()+' tr-'+tierOf(p).k+'" style="--i:'+Math.min(i||0,12)+';--t:'+Math.max(0,1-(i||0)/10).toFixed(2)+'"><td class="rank num">'+(p.rank <= 3 ? '<span class="medal">'+p.rank+'</span>' : p.rank)+mvMini(p)+'</td>'+
-      '<td><div class="who">'+avatar(p,'sm')+'<span class="n en'+(p.is_mvp?' mvp mvpbg':'')+'">'+esc(p.name)+'</span>'+zk(p)+'<span class="tier en" title="'+tierOf(p).n+'">'+tierOf(p).n+'</span></div></td>'+
+      '<td><div class="who">'+avatar(p,'sm')+'<span class="n en'+(p.is_mvp?' mvp mvpbg':'')+'">'+esc(p.name)+'</span>'+zk(p)+''+tierTag(p)+'</div></td>'+
       '<td class="team">'+esc(p.team||'')+'</td>'+
       '<td><div class="pts"><b class="num">'+p.points+'</b><span class="track"><i style="width:'+(p.points/mx*100)+'%"></i></span></div></td>'+
       '<td>'+mvHtml(p)+'</td><td class="st num">'+(p.streak ? cx(FLAME,p.streak) : '–')+'</td><td class="st num">'+(p.tournaments ? cx(CUP,p.tournaments) : '–')+'</td></tr>';
@@ -2437,6 +2488,7 @@ html[dir=ltr] .evq{min-width:0}
     h += '<section class="bc s2"><span class="k">FORMAT</span><h3>'+c.teams+' فرق</h3><p>كل فريق بيلعب ضد كل الفرق الباقية.</p>'+fmtSvg(c.teams)+'</section>';
     h += '<section class="bc s4"><span class="k">POINTS</span><h3>نقاط المراكز</h3><p>النقاط بتتوزع على حسب مركز فريقك في الجلسة.</p><div class="ladder">'+ladder+'</div><span class="chip"><b>×2</b>'+esc(swTxt(c.sweep))+'</span></section>';
     h += '<section class="bc s3"><span class="k">STREAK</span><h3>الستريك</h3><div class="streak">'+nodes+'</div><div class="stl">'+stkLadder(c).map(x => '<span class="'+(x[1] > c.streakBonus ? 'big' : '')+'"><i class="num">'+x[0]+'</i><b class="num">'+sgn(x[1])+'</b></span>').join('')+'<em>وهكذا</em></div><ul><li>كل دورة تحضرها ورا بعض بتزود الستريك 1، سواء كسبت أو خسرت.</li><li>الغياب عن دورة بيصفّر الستريك.</li><li>'+stkTxt(c)+'</li><li>أعلى ستريك وصلتله بيظهر في بروفايلك.</li></ul></section>';
+    h += '<section class="bc s3"><span class="k">TIERS</span><h3>التصنيفات</h3><p>تصنيفك بيتحدد بنقاطك، وكل تصنيف ليه 3 مستويات.</p>'+tierLadder()+'<p>ليجيندري بيتفتح من 100 نقطة وهو مستوى واحد.</p></section>';
     h += '<section class="bc s3 mvpcard"><span class="k">MVP</span><div class="big num">'+sgn(c.mvpBonus)+'</div><h3>لاعب الدورة</h3><ul><li>لاعب واحد بس في كل دورة بيبقى لاعب الدورة.</li><li>بياخد النقطة فورًا، واسمه بيظهر في الترتيب باللون السماوي.</li><li>عدد مرات التتويج بيظهر في بروفايل اللاعب.</li></ul><span class="mvpname"><span class="badge">MVP</span>اسم اللاعب</span></section>';
     h += '<section class="bc s3"><span class="k">PRIZES</span><h3>جوايز الشهر</h3><div class="prizes">'+pz+'</div><p>'+esc(c.prizes)+'</p></section>';
     h += '<section class="bc s3"><span class="k">SCHEDULE</span><h3>المواعيد</h3><div class="days">'+c.days.map(d => '<span class="day">'+esc(d)+'</span>').join('')+'</div><div class="clock">'+esc(c.time)+'</div><div class="penalty"><span class="big bigdn num">−'+c.penalty+'</span><p>'+esc(cnTxt(c))+'</p></div></section>';
@@ -2696,7 +2748,7 @@ function lgSchedule(L){
     const cell = (v, l) => '<div><b class="num">'+v+'</b><span>'+l+'</span></div>';
     b.innerHTML = '<div class="pp"><div class="ppact"><button class="btn" type="button" data-pback>→ التصنيف</button></div>'+
       '<header class="pph pcv pcl'+medalOf(p)+'" data-r="'+p.rank+'" style="'+pcs(p.name)+'">'+avatar(p)+'<div><h1 class="en'+(p.is_mvp?' mvp':'')+'">'+esc(p.name)+zk(p)+'</h1><small>المركز <bdi class="num">'+p.rank+'</bdi> من <bdi class="num">'+S.players.length+'</bdi>'+(p.team ? ' · '+esc(p.team) : '')+'</small><div class="pcv-tg">'+tierChip(p)+champHtml(p)+'</div></div>'+
-        '<div class="pcv-s"><span><b class="num">'+p.points+'</b>نقطة</span><span>'+mvHtml(p)+'</span><span>'+FLAME+'<b class="num">'+p.streak+'</b>ستريك</span></div>'+pcvBadges(p)+'</header>'+seasonBlock(p)+
+        '<div class="pcv-s"><span><b class="num">'+p.points+'</b>نقطة</span><span>'+mvHtml(p)+'</span><span>'+FLAME+'<b class="num">'+p.streak+'</b>ستريك</span></div>'+pcvBadges(p)+'</header>'+tierBar(p)+seasonBlock(p)+
       '<div class="kv kv4">'+cell(p.points,'النقاط')+cell(FLAME+p.streak,'الستريك')+cell(CUP+p.tournaments,'دورات الفوز')+cell(wr,'نسبة الفوز')+'</div>'+
       '<div class="kvmw"><button type="button" class="btn sm" data-kvm aria-expanded="'+(ui.kvm ? 'true' : 'false')+'">'+(ui.kvm ? 'أقل' : 'المزيد من الأرقام')+'</button></div>'+
       '<div class="kv kvx"'+(ui.kvm ? '' : ' hidden')+'>'+cell(FLAME+(p.streak_peak||0),'أعلى ستريك')+cell(p.mvp_count||0,'مرات MVP')+cell(mp,'ماتشات لعبها')+cell(mw,'كسبها')+cell(ml,'خسرها')+'</div>'+
@@ -3087,7 +3139,7 @@ function lgSchedule(L){
     if(isCup){ g.strokeStyle = '#e0a82e'; g.lineWidth = 1.3; g.lineCap = 'round'; g.stroke(new Path2D('M4 3H2.3v1.3A2.7 2.7 0 0 0 4.6 7M12 3h1.7v1.3A2.7 2.7 0 0 1 11.4 7')); }
     g.fillStyle = P[1]; g.fill(new Path2D(P[0])); g.fillStyle = P[3]; g.fill(new Path2D(P[2])); g.restore();
   }
-  async function loadFonts(){ try{ await Promise.all([document.fonts.load('700 60px "Orbitron"'), document.fonts.load('900 60px "Orbitron"'), document.fonts.load('700 40px "Changa"'), document.fonts.load('600 36px "Chakra Petch"'), document.fonts.load('600 30px "Cairo"')]); }catch(e){} }
+  async function loadFonts(){ try{ await Promise.all([document.fonts.load('700 60px "Orbitron"'), document.fonts.load('900 60px "Orbitron"'), document.fonts.load('700 40px "Changa"'), document.fonts.load('600 36px "Chakra Petch"'), document.fonts.load('600 30px "Cairo"'), loadTierIcons()]); }catch(e){} }
   const dateStr = () => { try{ return new Intl.DateTimeFormat(LOCL(),{day:'numeric',month:'long',year:'numeric',timeZone:'Africa/Cairo'}).format(new Date(S.updated)); }catch(e){ return String(S.updated).slice(0,10); } };
   const MED = {1:['#f2c14e','#ffe39a','#b8862b','242,193,78'], 2:['#c9d1e0','#f1f4fb','#8b95a8','201,209,224'], 3:['#d08a52','#f3bf90','#8f5628','208,138,82']};
   function drawMark(g, x, y, sz){
@@ -3327,10 +3379,11 @@ function seasonStat(p){
   return {k:k, pts:r ? r.points : 0, rk:r ? r.rank : 0, n:D.L.length, att:r ? r._att : 0};
 }
 function tierPill(g, p, x, y, align, fs){
-  const T = tPaint(p); fs = fs || 26; g.save(); g.direction = 'ltr'; g.textBaseline = 'middle'; g.font = '800 '+fs+'px '+FD; try{ g.letterSpacing = '5px'; }catch(e){}
-  const w = g.measureText(T.n).width + 56, h = fs*2.1, px = align === 'right' ? x-w : align === 'center' ? x-w/2 : x;
+  const T = tPaint(p), ic = tIcImg[tierOf(p).k]; fs = fs || 26; g.save(); g.direction = 'ltr'; g.textBaseline = 'middle'; g.font = '800 '+fs+'px '+FD; try{ g.letterSpacing = '5px'; }catch(e){}
+  const h = fs*2.1, is = ic ? Math.round(h*.84) : 0, lp = ic ? 12+is+12 : 28, w = g.measureText(T.n).width + lp + 24, px = align === 'right' ? x-w : align === 'center' ? x-w/2 : x;
   rr(g, px, y, w, h, 14); g.fillStyle = 'rgba('+T.rgb+',.18)'; g.fill(); g.lineWidth = 2; g.strokeStyle = T.c0; g.save(); g.shadowColor = T.c0; g.shadowBlur = 14; g.stroke(); g.restore();
-  g.fillStyle = T.c1; g.textAlign = 'center'; g.fillText(T.n, px+w/2+2, y+h/2+2); try{ g.letterSpacing = '0px'; }catch(e){} g.restore(); return w;
+  if(ic) g.drawImage(ic, px+12, y+(h-is)/2, is, is);
+  g.fillStyle = T.c1; g.textAlign = 'left'; g.fillText(T.n, px+lp, y+h/2+2); try{ g.letterSpacing = '0px'; }catch(e){} g.restore(); return w;
 }
 function champPill(g, p, x, y, align){
   const m = monthChamps(p.id); if(!m.length) return 0; const txt = 'بطل الشهر '+m.join(' · '); g.save(); g.direction = 'rtl'; g.textBaseline = 'middle'; g.font = '700 26px '+FB;
@@ -4734,7 +4787,7 @@ async function drawPlayerClassic(p){
     if(!a || !b) return ''+emp('duel','اختار لاعبين عشان تبدأ المقارنة، أو افتح صفحة أي لاعب واضغط «قارن مع لاعب».')+'';
     const D = cmpData(a, b), nm = (p, c) => '<div class="cpl '+c+'">'+avatar(p)+'<b class="en">'+esc(p.name)+'</b><small>المركز <bdi class="num">'+p.rank+'</bdi></small></div>';
     const val = (v, sf) => v === null ? '—' : '<bdi class="num">'+v+sf+'</bdi>';
-    const ta = tierOf(a), tb = tierOf(b), pa = cmpProb(a, b, D), side = (p, c, t) => '<div class="vsx-side '+c+'">'+avatar(p)+'<b class="en">'+esc(p.name)+'</b><span class="tier en t-'+t.k+'" style="--tc:'+TCOL[t.k][0]+'">'+t.n+'</span><small><bdi class="num">'+p.points+'</bdi> نقطة · المركز <bdi class="num">'+p.rank+'</bdi></small></div>';
+    const ta = tierOf(a), tb = tierOf(b), pa = cmpProb(a, b, D), side = (p, c, t) => '<div class="vsx-side '+c+'">'+avatar(p)+'<b class="en">'+esc(p.name)+'</b><span class="tier en t-'+t.k+'" style="--tc:'+TCOL[t.k][0]+'">'+tierIcon(t.k, 'chip')+t.n+'</span><small><bdi class="num">'+p.points+'</bdi> نقطة · المركز <bdi class="num">'+p.rank+'</bdi></small></div>';
     let h = '<div class="vsx" style="--ca:'+TCOL[ta.k][0]+';--cb:'+TCOL[tb.k][0]+'">'+side(a,'a',ta)+'<div class="vsx-mid"><span class="vsx-vs en">VS</span></div>'+side(b,'b',tb)+'</div>'+
       '<div class="vsp" style="--ca:'+TCOL[ta.k][0]+';--cb:'+TCOL[tb.k][0]+'"><div class="vsp-l"><b class="num a">'+pa+'%</b><small>توقّع الفوز</small><b class="num b">'+(100-pa)+'%</b></div><i class="vsp-b"><u class="a" style="width:'+pa+'%"></u><u class="b" style="width:'+(100-pa)+'%"></u></i><p class="hint">توقّع تقريبي من النقاط ونسبة الفوز والمواجهات المباشرة، مش نتيجة مضمونة.</p></div>'+(D.derby ? '<div class="derby"><b>🔥 ديربي</b><span><bdi class="num">'+D.vs.length+'</bdi> مواجهات والنتيجة <bdi class="num">'+D.aw+'-'+D.bw+'</bdi> · فرق <bdi class="num">'+Math.abs(a.rank-b.rank)+'</bdi> '+(Math.abs(a.rank-b.rank) === 1 ? 'مركز' : 'مراكز')+' بس</span></div>' : '')+
       '<div class="cmpsum"><span class="a"><bdi class="num">'+D.wa+'</bdi></span><small>يتفوق في</small><span class="b"><bdi class="num">'+D.wb+'</bdi></span></div>'+
