@@ -430,24 +430,27 @@ tbody tr[data-id] .av{transition:transform .25s cubic-bezier(.2,.8,.2,1)}tbody t
 .day{transition:transform .2s}.day:hover{transform:translateY(-2px)}
 #fxc{position:fixed;inset:0;width:100vw;height:100vh;z-index:9999;pointer-events:none}
 /* medals: gold / silver / bronze */
-.g1{--m:#f2c14e;--ml:#ffe39a;--md:#b8862b;--mr:242,193,78}
-.g2{--m:#c9d1e0;--ml:#f1f4fb;--md:#8b95a8;--mr:201,209,224}
-.g3{--m:#d08a52;--ml:#f3bf90;--md:#8f5628;--mr:208,138,82}
-.av.g1,.av.g2,.av.g3{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--m)}
-.av.sm.g1,.av.sm.g2,.av.sm.g3{box-shadow:0 0 0 1.5px var(--bg),0 0 0 3px var(--m)}
+.tk-leg{--m:#ff3df0;--ml:#ffc2fb;--md:#a8189a;--mr:255,61,240}
+.tk-eme{--m:#10e08a;--ml:#b6ffdc;--md:#089a5d;--mr:16,224,138}
+.tk-dia{--m:#5ee7ff;--ml:#d3f8ff;--md:#2fa6be;--mr:94,231,255}
+.tk-gld{--m:#f2c14e;--ml:#ffe39a;--md:#b8862b;--mr:242,193,78}
+.tk-slv{--m:#aab4c3;--ml:#e3e8ef;--md:#6f7a8a;--mr:170,180,195}
+.tk-brz{--m:#d08a4e;--ml:#f0c39c;--md:#8f5628;--mr:208,138,78}
+.av[class*="tk-"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--m)}
+.av.sm[class*="tk-"]{box-shadow:0 0 0 1.5px var(--bg),0 0 0 3px var(--m)}
 .medal{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(145deg,var(--ml),var(--m) 55%,var(--md));color:#1a1203;font-weight:700;font-size:14px;line-height:1;box-shadow:0 0 10px rgba(var(--mr),.35)}
-tbody tr.g1,tbody tr.g2,tbody tr.g3{background:linear-gradient(to left,rgba(var(--mr),.08),transparent 45%)}
-tbody tr.g1 .track i,tbody tr.g2 .track i,tbody tr.g3 .track i{background:var(--m)}
-tbody tr.g1 .n,tbody tr.g2 .n,tbody tr.g3 .n{font-weight:600}
-.pod.g1,.pod.g2,.pod.g3{border-color:rgba(var(--mr),.55);background:linear-gradient(180deg,rgba(var(--mr),.14),transparent 62%),var(--surface)}
-.pod.g1{box-shadow:0 12px 34px -16px rgba(var(--mr),.55)}
-.pod.g1 .rk,.pod.g2 .rk,.pod.g3 .rk{color:var(--m);font-weight:700}
-.pod.g1 .pt,.pod.g2 .pt,.pod.g3 .pt{color:var(--ml)}
-.pod:hover.g1,.pod:hover.g2,.pod:hover.g3{border-color:var(--m)}
-.pod .av.g1,.pod .av.g2,.pod .av.g3{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--m)}
+tbody tr[class*="tk-"]{background:linear-gradient(to left,rgba(var(--mr),.08),transparent 45%)}
+tbody tr[class*="tk-"] .track i{background:var(--m)}
+tbody tr[class*="tk-"] .n{font-weight:600}
+.pod[class*="tk-"]{border-color:rgba(var(--mr),.55);background:linear-gradient(180deg,rgba(var(--mr),.14),transparent 62%),var(--surface)}
+.pod.p1[class*="tk-"]{box-shadow:0 12px 34px -16px rgba(var(--mr),.55)}
+.pod[class*="tk-"] .rk{color:var(--m);font-weight:700}
+.pod[class*="tk-"] .pt{color:var(--ml)}
+.pod:hover[class*="tk-"]{border-color:var(--m)}
+.pod .av[class*="tk-"]{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--m)}
 .crown{width:26px;height:18px;color:var(--m);margin-bottom:-2px;filter:drop-shadow(0 0 6px rgba(var(--mr),.6))}
-.pc.g1,.pc.g2,.pc.g3{border-color:rgba(var(--mr),.45)}
-.pc.g1 .rk,.pc.g2 .rk,.pc.g3 .rk{color:var(--m)}
+.pc[class*="tk-"]{border-color:rgba(var(--mr),.45)}
+.pc[class*="tk-"] .rk{color:var(--m)}
 @media (max-width:620px){.tablewrap .medal{width:22px;height:22px;font-size:12px}}
 /* logo placements */
 .hero .emb{display:block;width:68px;height:68px;margin-bottom:14px;filter:drop-shadow(0 8px 22px rgba(120,80,255,.4));animation:pop .5s cubic-bezier(.2,.8,.2,1) backwards}
@@ -806,10 +809,10 @@ button.bdg{font:inherit;color:inherit;cursor:pointer}button.bdg:active{transform
 .thp u{position:absolute;inset-inline-end:8px;bottom:8px;width:18px;height:12px;border-radius:99px}
 .thn{font-size:13px;font-weight:600}
 /* ---- design pack 2 ---- */
-#rows tr[data-id]:not(.g1):not(.g2):not(.g3){background:linear-gradient(to left,color-mix(in srgb,var(--accent) calc(var(--t,0)*14%),transparent),transparent 62%)}
-#rows tr[data-id]:not(.g1):not(.g2):not(.g3):hover{background:var(--surface-2)}
+#rows tr[data-id]{background:linear-gradient(to left,color-mix(in srgb,var(--m,var(--accent)) calc(var(--t,0)*16%),transparent),transparent 62%)}
+#rows tr[data-id]:hover{background:var(--surface-2)}
 #rows td:first-child{box-shadow:inset -3px 0 0 color-mix(in srgb,var(--accent) calc(var(--t,0)*75%),transparent)}
-#rows tr.g1 td:first-child,#rows tr.g2 td:first-child,#rows tr.g3 td:first-child{box-shadow:inset -3px 0 0 var(--m)}
+#rows tr[class*="tk-"] td:first-child{box-shadow:inset -3px 0 0 var(--m)}
 .mvp2{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
 .mvp2.u{color:var(--up);background:color-mix(in srgb,var(--up) 14%,transparent)}
 .mvp2.d{color:var(--down);background:color-mix(in srgb,var(--down) 14%,transparent)}
@@ -828,7 +831,7 @@ button.bdg{font:inherit;color:inherit;cursor:pointer}button.bdg:active{transform
 @keyframes podsw{0%,55%{background-position:200% 0}100%{background-position:-100% 0}}
 @keyframes crownf{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-4px) rotate(3deg)}}
 .pcv{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px 16px;padding:18px 16px;border-radius:22px;border:1px solid var(--line);overflow:hidden;--cv:var(--accent);background:radial-gradient(120% 150% at 92% -20%,color-mix(in srgb,var(--cv) 40%,transparent),transparent 62%),repeating-linear-gradient(115deg,transparent 0 18px,color-mix(in srgb,var(--cv) 6%,transparent) 18px 19px),linear-gradient(160deg,var(--surface-2),var(--surface))}
-.pcv.g1,.pcv.g2,.pcv.g3{--cv:var(--m);border-color:rgba(var(--mr),.5)}
+.pcv[class*="tk-"]{--cv:var(--m);border-color:rgba(var(--mr),.5)}
 .pcv .av{width:92px;height:92px;font-size:32px;box-shadow:0 0 0 3px var(--bg),0 0 0 6px var(--cv)}
 .pcv-s,.pcv-b{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .pcv-s span{display:inline-flex;align-items:baseline;gap:5px;font-size:13px;color:var(--muted);background:color-mix(in srgb,var(--bg) 55%,transparent);border:1px solid var(--line);padding:5px 12px;border-radius:99px}
@@ -1136,7 +1139,7 @@ td.empty .emp{padding:20px 0}
 
 /* v42 */
 .pcl{background:radial-gradient(120% 150% at 92% -20%,color-mix(in srgb,var(--pc) 44%,transparent),transparent 62%),radial-gradient(90% 120% at 0% 115%,color-mix(in srgb,var(--pc) 24%,transparent),transparent 60%),linear-gradient(160deg,var(--surface-2),var(--surface))}
-.pcl:not(.g1):not(.g2):not(.g3){--cv:var(--pc);border-color:color-mix(in srgb,var(--pc) 45%,var(--line))}
+.pcl.__off{--cv:var(--pc);border-color:color-mix(in srgb,var(--pc) 45%,var(--line))}
 .pch{padding:14px;border-radius:18px;border:1px solid color-mix(in srgb,var(--pc) 45%,var(--line));margin-bottom:12px;position:relative}
 .pch .av{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--pc)}
 .tc.tk{position:relative;overflow:hidden;border-radius:22px;padding:18px 16px 14px;background:radial-gradient(90% 60% at 100% 0%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%),linear-gradient(160deg,var(--surface-2),var(--surface))}
@@ -1508,8 +1511,6 @@ dialog::backdrop{background:rgba(3,3,8,.84)}
 #rows .track{width:100%;height:3px;flex:none;min-width:0}
 #rows .who .av.sm{width:42px;height:42px;border-radius:5px}
 #rows .who .n{font-size:16px;font-weight:700}
-#rows tr.g1{border-color:rgba(255,225,77,.5);background:linear-gradient(90deg,rgba(255,225,77,.1),#0d0d18 60%)}
-#rows tr.g2{border-color:rgba(201,209,224,.4)}#rows tr.g3{border-color:rgba(208,138,82,.45)}
 #rows tr:hover{background:linear-gradient(90deg,rgba(255,43,214,.16),#0d0d18 70%);border-color:var(--np);box-shadow:0 0 22px -8px rgba(255,43,214,.7)}
 @media (max-width:640px){
  #rows tr{grid-template-columns:52px minmax(0,1fr) auto}
@@ -1733,9 +1734,6 @@ html{scrollbar-color:#ff2bd6 #0a0a13;scrollbar-width:thin}
 #rows tr[data-id]{transition:background .2s}
 #rows tr[data-id]:hover td:first-child{box-shadow:inset -4px 0 0 #00f0ff,inset 0 0 24px rgba(0,240,255,.12)}
 #rows tr[data-id]:hover .rk,#rows tr[data-id]:hover td:first-child{text-shadow:0 0 14px currentColor}
-#rows tr.g1{background:linear-gradient(to left,rgba(255,225,77,.12),transparent 60%)}
-#rows tr.g2{background:linear-gradient(to left,rgba(190,200,220,.09),transparent 60%)}
-#rows tr.g3{background:linear-gradient(to left,rgba(255,150,80,.09),transparent 60%)}
 /* podium */
 .podium>*{transition:transform .3s,box-shadow .3s}
 .podium>*:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(255,43,214,.22)}
@@ -1913,6 +1911,17 @@ html[dir=ltr] .evq{min-width:0}
 @media (max-width:480px){.trw{flex-wrap:wrap}.trs{margin-inline-start:0;width:100%}.tbadge{width:56px;height:56px}}
 html.lite .tbk i{animation:none}
 @media (prefers-reduced-motion:reduce){.tbk i{animation:none!important}}
+/* v90 tier rings */
+.av[class*="tk-"],.pod.p1 .av[class*="tk-"]{border-color:var(--m);box-shadow:0 0 0 2px var(--bg),0 0 0 3.5px rgba(var(--mr),.55),0 0 16px -2px rgba(var(--mr),.7)}
+.av.sm[class*="tk-"]{box-shadow:0 0 0 1.5px var(--bg),0 0 0 3px rgba(var(--mr),.55),0 0 10px -2px rgba(var(--mr),.6)}
+html:not(.lite) .pod.p1 .av[class*="tk-"]{animation:none}
+#pub .pod[class*="tk-"]{border-color:rgba(var(--mr),.6)}
+#pub .pod[class*="tk-"] .rk{color:var(--m)}
+#pub .pod[class*="tk-"] .pt{color:var(--ml)}
+.pod .crown{color:var(--m,#ffe14d)}
+.pod.p1[class*="tk-"]{box-shadow:0 12px 34px -16px rgba(var(--mr),.6)}
+.pod.p1[class*="tk-"] .crown{filter:drop-shadow(0 0 8px rgba(var(--mr),.8))}
+#pub .pcv[class*="tk-"] .av{border-color:var(--m)}
 </style>
 
 </head><body><div id="maint" hidden></div><div id="courtbg" aria-hidden="true"><svg viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="20" y="20" width="160" height="260" rx="4"/><path d="M20 150h160M100 80v140M20 80h160M20 220h160" /><path d="M20 150h160" stroke-width="3" stroke-dasharray="3 5"/></svg></div><div id="splash" aria-hidden="true"><svg class="sp-c" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" pathLength="1"><rect class="l1" x="40" y="80" width="320" height="540" rx="4" pathLength="1"/><path class="l2" d="M40 350H360" pathLength="1"/><path class="l3" d="M40 215H360M40 485H360" pathLength="1"/><path class="l4" d="M200 215V485" pathLength="1"/></g></svg><i class="sp-ball"></i><div class="sp-m"><svg  viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="sb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a0830"/><stop offset="1" stop-color="#06050c"/></linearGradient><linearGradient id="ss1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9f8"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient></defs><rect width="64" height="64" rx="17" fill="url(#sb1)"/><rect x=".75" y=".75" width="62.5" height="62.5" rx="16.4" fill="none" stroke="#ff2bd6" stroke-opacity=".55" stroke-width="1.5"/><g fill="none" stroke="#00f0ff" stroke-opacity=".5" stroke-width="1.1"><rect x="11" y="11" width="42" height="42" rx="3"/><path d="M11 32h6M47 32h6"/></g><path d="M22 18v28M42 18v28M22 32h20" fill="none" stroke="url(#ss1)" stroke-width="5.6" stroke-linecap="round"/><circle cx="49.5" cy="15" r="2.6" fill="#39ff88"/></svg></div><div class="sp-t"><b class="en">THE HIDDEN COURT</b><small class="en">PADEL RANKING</small></div><div class="sp-b"><i></i></div></div><script>try{if(!sessionStorage.getItem("hc_i")&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){document.getElementById("splash").classList.add("intro");sessionStorage.setItem("hc_i","1");}}catch(e){}</script><div id="root" dir="rtl" lang="ar">
@@ -2189,8 +2198,10 @@ html.lite .tbk i{animation:none}
   const initials = n => { const p = n.trim().split(/\s+/); return ((p[0]||'?')[0] + (p[1]?p[1][0]:'')).toUpperCase(); };
   const TIERS = [['leg','Legendary'],['eme','Emerald'],['dia','Diamond'],['gld','Gold'],['slv','Silver'],['brz','Bronze']];
   const TIER_DEF = []; [['brz','Bronze',[0,5,10,15]],['slv','Silver',[15,20,25,30]],['gld','Gold',[30,35,40,45]],['dia','Diamond',[45,50,55,60]],['eme','Emerald',[60,70,80,100]]].forEach(d => { for(let i = 0; i < 3; i++) TIER_DEF.push({k:d[0], nm:d[1], lv:i+1, lo:d[2][i], hi:d[2][i+1]}); }); TIER_DEF.push({k:'leg', nm:'Legendary', lv:0, lo:100, hi:Infinity});
+  const TDK = {leg:'#a8189a', eme:'#089a5d', dia:'#2fa6be', gld:'#b8862b', slv:'#6f7a8a', brz:'#8f5628'};
+  const tMed = p => { const k = tierOf(p).k; return [TCOL[k][0], TCOL[k][1], TDK[k], TCOL[k][2]]; };
   const tierName = d => d.nm + (d.lv ? ' '+d.lv : '');
-  const tierOf = p => { const pts = Math.max(0, p.points || 0); let i = TIER_DEF.length - 1; for(let j = 0; j < TIER_DEF.length; j++) if(pts < TIER_DEF[j].hi){ i = j; break; } const d = TIER_DEF[i], nx = TIER_DEF[i+1] || null; return {k:d.k, n:tierName(d), lv:d.lv, lo:d.lo, hi:d.hi, pct:nx ? Math.round((pts - d.lo) * 100 / (d.hi - d.lo)) : 100, next:nx ? tierName(nx) : '', need:nx ? d.hi - pts : 0}; };
+  const tierOf = p => { const pts = Math.max(0, (p._s ? (byId(p.id) || p) : p).points || 0); let i = TIER_DEF.length - 1; for(let j = 0; j < TIER_DEF.length; j++) if(pts < TIER_DEF[j].hi){ i = j; break; } const d = TIER_DEF[i], nx = TIER_DEF[i+1] || null; return {k:d.k, n:tierName(d), lv:d.lv, lo:d.lo, hi:d.hi, pct:nx ? Math.round((pts - d.lo) * 100 / (d.hi - d.lo)) : 100, next:nx ? tierName(nx) : '', need:nx ? d.hi - pts : 0}; };
   const tierGlyph = (k, c, b) => ({
     brz:'<circle cx="24" cy="24" r="11.5" fill="'+c+'"/><path d="M14.4 19.3c4.7 4.4 14.5 4.4 19.2 0M14.4 28.7c4.7-4.4 14.5-4.4 19.2 0" fill="none" stroke="'+b+'" stroke-width="2.2" stroke-linecap="round"/>',
     slv:'<ellipse cx="24" cy="20.5" rx="9.6" ry="11" fill="none" stroke="'+c+'" stroke-width="2.7"/><g fill="'+c+'"><circle cx="20.4" cy="15.6" r="1.4"/><circle cx="27.6" cy="15.6" r="1.4"/><circle cx="24" cy="20" r="1.4"/><circle cx="19.6" cy="24.4" r="1.4"/><circle cx="28.4" cy="24.4" r="1.4"/></g><path d="M24 31.5V39" stroke="'+c+'" stroke-width="4.2" stroke-linecap="round"/>',
@@ -2219,7 +2230,7 @@ html.lite .tbk i{animation:none}
   const stkLadder = c => { const e = c.streakEvery || 4, out = []; for(let i = 1; i <= 4; i++) out.push([e*i, stkBonus(e*i, c)]); return out; };
   const stkTxt = c => 'كل '+c.streakEvery+' ستريك بيدّوك '+c.streakBonus+' نقطة بونص، ومن ستريك '+c.streakFrom+' وفوق البونص بيبقى '+c.streakBonus2+' نقطة.';
   document.addEventListener('click', e => { const b = e.target.closest('[data-hmore]'); if(!b) return; const sec = b.closest('.honor'), o = sec.classList.toggle('open'); b.setAttribute('aria-expanded', o); const n = sec.querySelectorAll('.hx').length; b.innerHTML = o ? 'إخفاء' : 'عرض الباقي (<bdi class="num">'+n+'</bdi>)'; });
-  const medalOf = p => (p.rank >= 1 && p.rank <= 3) ? ' g'+p.rank : '';
+  const medalOf = p => ' tk-'+tierOf(p).k;
   const avatar = (p, cls) => '<span class="av '+(cls||'')+medalOf(p)+'">'+(p.image?'<img alt="" src="'+p.image+'">':'<span class="en">'+esc(initials(p.name))+'</span>')+'</span>';
   const arrow = d => d>0?'<span class="tr u" title="ارتفع">▲</span>':d<0?'<span class="tr d" title="انخفض">▼</span>':'<span class="tr z">–</span>';
   const byId = id => S.players.find(p => p.id === id);
@@ -2461,7 +2472,7 @@ html.lite .tbk i{animation:none}
     if(q) list = list.filter(p => p.name.toLowerCase().indexOf(q) > -1);
     $('rows').classList.toggle('anim', !!animate);
     if(!all.length && ui.ld){ ui.sk = 1; $('rows').innerHTML = '<tr><td colspan="7">'+skel('rows')+'</td></tr>'; return; }
-    const dupPod = !q && !fa0() && list.length > 3 && ($('podium').children.length >= 3);
+    const dupPod = false;
     $('rows').innerHTML = list.length ? list.map((p,i) => dupPod && i < 3 ? '' : rowHtml(p, mx, i)).join('') : '<tr><td colspan="7" class="empty">'+(scopeNow() === 'season' && !all.length ? emp('find','الشهر ده لسه ما بدأ. أول دورة فيه هي الدورة '+((seasonShown()-1)*seasonLen()+1)+'.')+'<div class="semb"><button class="btn" type="button" data-sc="all">اعرض الترتيب الكلي</button></div>' : emp('find','مفيش لاعب مطابق.'))+'</td></tr>';
     $('count').textContent = 'عرض '+list.length+' من '+all.length+' لاعب';
     const fa = !!(ui.n || ui.tr || ui.team || ui.sort !== 'points'); const fd = document.querySelector('#fbtn .fdot'); if(fd) fd.hidden = !fa; const fc = $('fclr'); if(fc) fc.hidden = !fa;
@@ -3215,7 +3226,7 @@ function lgSchedule(L){
     const base = 330 + PH, cols = top.length >= 3 ? [[top[1],1],[top[0],0],[top[2],2]] : top.map((p,i)=>[p,i]);
     const hs = [PH, PH-90, PH-130], cw = 300, gap = 30, x0 = 60 + (960 - (cols.length*cw + (cols.length-1)*gap))/2;
     cols.forEach((c, k) => {
-      const p = c[0], i = c[1], x = x0 + k*(cw+gap), h = hs[i], y = base - h, md = MED[p.rank] || MED[i+1] || ['#9b7bff','#d9ccff','#6a4fc4','155,123,255'], col = md[0], rgb = md[3];
+      const p = c[0], i = c[1], x = x0 + k*(cw+gap), h = hs[i], y = base - h, md = tMed(p) || MED[i+1] || ['#9b7bff','#d9ccff','#6a4fc4','155,123,255'], col = md[0], rgb = md[3];
       g.save(); g.shadowColor = 'rgba('+rgb+',.45)'; g.shadowBlur = 40; rr(g,x,y,cw,h,30); g.fillStyle = '#0c0a18'; g.fill(); g.restore();
       const gr = g.createLinearGradient(0,y,0,y+h); gr.addColorStop(0,'rgba('+rgb+',.30)'); gr.addColorStop(.55,'rgba('+rgb+',.05)'); gr.addColorStop(1,'rgba(0,0,0,0)'); rr(g,x,y,cw,h,30); g.fillStyle = gr; g.fill();
       g.save(); rr(g,x,y,cw,h,30); g.clip(); g.direction = 'ltr'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = '900 300px '+FD; g.lineWidth = 3; g.strokeStyle = 'rgba('+rgb+',.28)'; g.strokeText(String(p.rank), x+cw/2, base-96); g.restore();
@@ -3393,7 +3404,7 @@ function champPill(g, p, x, y, align){
 }
 const sLine = p => { const q = seasonStat(p); return q.rk ? q.pts+' · #'+q.rk : '—'; };
 async function drawPlayerRare(p){
-  await loadFonts(); const W = 1080, H = 1450, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = MED[p.rank], TP = tPaint(p);
+  await loadFonts(); const W = 1080, H = 1450, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = tMed(p), TP = tPaint(p);
   const c0 = TP.c0, c1 = TP.c1, c2 = TP.c0, rgb = TP.rgb;
   const im = p.image ? await loadImg(p.image) : null, x = 100, y = 60, w = 880, h = 1180;
   courtBg(g, W, H, 330, H-120);
@@ -3429,7 +3440,7 @@ async function drawPlayerRare(p){
 }
 
 async function drawPlayerPoster(p){
-  await loadFonts(); const W = 1080, H = 1610, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = MED[p.rank], TP = tPaint(p);
+  await loadFonts(); const W = 1080, H = 1610, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = tMed(p), TP = tPaint(p);
   const c0 = TP.c0, c1 = TP.c1, rgb = TP.rgb, im = p.image ? await loadImg(p.image) : null;
   g.fillStyle = '#0b0714'; g.fillRect(0, 0, W, H);
   const pg = g.createLinearGradient(0, 0, W, H*.7); pg.addColorStop(0, 'rgba('+rgb+',.55)'); pg.addColorStop(.55, 'rgba('+rgb+',.12)'); pg.addColorStop(1, 'rgba('+rgb+',0)');
@@ -3451,7 +3462,7 @@ async function drawPlayerPoster(p){
 }
 
 async function drawPlayerClean(p){
-  await loadFonts(); const W = 1080, H = 1480, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = MED[p.rank], TP = tPaint(p), c0 = TP.c0, im = p.image ? await loadImg(p.image) : null;
+  await loadFonts(); const W = 1080, H = 1480, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = tMed(p), TP = tPaint(p), c0 = TP.c0, im = p.image ? await loadImg(p.image) : null;
   courtBg(g, W, H, 420, H-300); brandHead(g, 'PLAYER PROFILE'); g.textBaseline = 'middle';
   frameAv(g, im, p.name, W-190, 300, 110, shSt.fr, c0);
   let fs = 68; g.font = '700 '+fs+'px '+FB; while(fs > 36 && g.measureText(p.name).width > 640){ fs -= 4; g.font = '700 '+fs+'px '+FB; }
@@ -3521,7 +3532,7 @@ function qrStyled(g, M, px, py, mp, pad){
   const ms = lp*0.74; drawMark(g, lx+(lp-ms)/2, ly+(lp-ms)/2, ms);
 }
 async function drawPlayerCard(p){
-  await loadFonts(); const W = 1080, H = 1860, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = MED[p.rank], im = p.image ? await loadImg(p.image) : null;
+  await loadFonts(); const W = 1080, H = 1860, cv = mkCv(W, H), g = cv.getContext('2d'), st = plSt(p), md = tMed(p), im = p.image ? await loadImg(p.image) : null;
   const tt = tierOf(p), tcl = TCOL[tt.k], tier = [tt.n.toUpperCase(), tcl[0], tcl[1], tcl[2]], c0 = tier[1], c1 = tier[2], rgb = tier[3];
   courtBg(g, W, H, 420, H-300); brandHead(g, 'MEMBERSHIP CARD');
   // card shell
@@ -4830,7 +4841,7 @@ async function drawPlayerClassic(p){
   /* compare image */
   async function drawRecap(p){
     await loadFonts(); ranked();
-    const W = 1080, H = 1920, md = MED[p.rank], ac = tPaint(p).c0, im = p.image ? await loadImg(p.image) : null;
+    const W = 1080, H = 1920, md = tMed(p), ac = tPaint(p).c0, im = p.image ? await loadImg(p.image) : null;
     const M = pxMatches(p.id), w = M.filter(r => r.won).length, l = M.length-w, wr = M.length ? Math.round(w/M.length*100) : 0, H2 = pxH2H(p.id), pl = pxPlayed(p);
     const cvs = [];
     const slide = (label, title, col) => { const cv = mkCv(W, H), g = cv.getContext('2d'); courtBg(g, W, H, 520, H-400); brandHead(g);
